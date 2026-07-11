@@ -814,39 +814,6 @@ F 3 "" H 3500 3750 50  0001 C CNN
 	1    3500 3750
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:VCC #PWR0102
-U 1 1 656AE0B5
-P 3500 1550
-F 0 "#PWR0102" H 3500 1400 50  0001 C CNN
-F 1 "VCC" H 3515 1723 50  0000 C CNN
-F 2 "" H 3500 1550 50  0001 C CNN
-F 3 "" H 3500 1550 50  0001 C CNN
-	1    3500 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR0103
-U 1 1 656B7BD2
-P 3500 2650
-F 0 "#PWR0103" H 3500 2500 50  0001 C CNN
-F 1 "VCC" H 3515 2823 50  0000 C CNN
-F 2 "" H 3500 2650 50  0001 C CNN
-F 3 "" H 3500 2650 50  0001 C CNN
-	1    3500 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR0104
-U 1 1 656C1729
-P 3500 4800
-F 0 "#PWR0104" H 3500 4650 50  0001 C CNN
-F 1 "VCC" H 3515 4973 50  0000 C CNN
-F 2 "" H 3500 4800 50  0001 C CNN
-F 3 "" H 3500 4800 50  0001 C CNN
-	1    3500 4800
-	1    0    0    -1  
-$EndComp
 Wire Notes Line rgb(255, 0, 0)
 	13000 9950 13000 16050
 Wire Notes Line rgb(255, 0, 0)
@@ -2067,7 +2034,6 @@ F 3 "~" H 15300 7150 50  0001 C CNN
 	1    15300 7150
 	-1   0    0    1   
 $EndComp
-NoConn ~ 3900 3850
 Wire Wire Line
 	3150 7150 3200 7150
 Text GLabel 2550 7150 0    39   Input ~ 0
@@ -2239,7 +2205,6 @@ Wire Wire Line
 Wire Wire Line
 	10500 7600 10300 7600
 Connection ~ 10300 7600
-NoConn ~ 3900 3750
 Wire Wire Line
 	3200 8700 3200 9050
 Connection ~ 3200 9050
@@ -2627,4 +2592,57 @@ Wire Wire Line
 Connection ~ 13100 6900
 Text Notes 14800 5050 0    50   ~ 0
 EQUATIONS\n-------\n\no23 =\no22 = \no21 = \no20 = \no19 = \no18 = <new PC value>\no17 = <see PLD notes>\no16 = \n\n/o15 = i1\n\n/o14 = /i8 & i9 & i10 & i11 & i13
+Text GLabel 3900 3850 2    39   Input ~ 0
+~RD
+Text GLabel 3900 3750 2    39   Input ~ 0
+~WR
+Wire Wire Line
+	3500 4800 3000 4800
+Wire Wire Line
+	3500 1550 3000 1550
+Text Notes 2150 3200 0    39   ~ 0
+Selector to set Pull-Up or\nPull-Down resistor on\nAddress and Data buses.
+Connection ~ 3000 3550
+Wire Wire Line
+	3000 4800 3000 3550
+$Comp
+L power:GND #PWR0102
+U 1 1 690F3EDC
+P 2600 3650
+F 0 "#PWR0102" H 2600 3400 50  0001 C CNN
+F 1 "GND" H 2605 3477 50  0000 C CNN
+F 2 "" H 2600 3650 50  0001 C CNN
+F 3 "" H 2600 3650 50  0001 C CNN
+	1    2600 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPDT SW5
+U 1 1 690D4E10
+P 2800 3550
+F 0 "SW5" H 2800 3743 50  0000 C CNN
+F 1 "PinHeader" H 2800 3744 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 2800 3550 50  0001 C CNN
+F 3 "~" H 2800 3550 50  0001 C CNN
+	1    2800 3550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0103
+U 1 1 656B7BD2
+P 2600 3450
+F 0 "#PWR0103" H 2600 3300 50  0001 C CNN
+F 1 "VCC" H 2615 3623 50  0000 C CNN
+F 2 "" H 2600 3450 50  0001 C CNN
+F 3 "" H 2600 3450 50  0001 C CNN
+	1    2600 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 1550 3000 2650
+Wire Wire Line
+	3500 2650 3000 2650
+Connection ~ 3000 2650
+Wire Wire Line
+	3000 2650 3000 3550
 $EndSCHEMATC
